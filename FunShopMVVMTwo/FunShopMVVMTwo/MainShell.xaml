@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FunShopMVVMTwo.View"
+             x:Class="FunShopMVVMTwo.MainShell">
+
+    <!--<MenuItem Clicked="ToRegistration" Text="Выход"/>
+
+    <TabBar>
+        <ShellContent Route="Authorisation" ContentTemplate="{DataTemplate local:AuthorisationPage}"/>
+    </TabBar>
+    <FlyoutItem Title="Товары" Icon="xamarin.png">
+        <ShellContent Route="Product" ContentTemplate="{DataTemplate local:ProductPage}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Категории" Icon="xamarin.png">
+        <ShellContent Route="Category"   ContentTemplate="{DataTemplate local:CategoryPage}"/>
+    </FlyoutItem>
+
+    <TabBar>
+        <ShellContent Route="Registration" ContentTemplate="{DataTemplate local:RegistrationPage}"/>
+    </TabBar>-->
+</Shell>

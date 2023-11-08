@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm ="clr-namespace:FunShopMVVMTwo.ViewModel"
+             x:Class="FunShopMVVMTwo.View.AuthorisationPage"
+             BindingContext="{DynamicResource viewModel}">
+               
+    <ContentPage.Resources>
+        <vm:AuthorisationVM x:Key="viewModel"/>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="150"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="1" Text="Авторизация" FontSize="25" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.ColumnSpan="3" TextColor="#AED2FF"/>
+
+            <StackLayout Grid.Row="2" Grid.Column="1">
+                <Entry Placeholder="Логин" WidthRequest="120" Text="{Binding Login}" />
+                <Entry Placeholder="Пароль" WidthRequest="120" Text="{Binding Password}" IsPassword="true"/>
+                <Button Text="Войти" Clicked="Inter" CornerRadius="5" BackgroundColor="#AED2FF"/>
+                <Button Text="Регистрация" Clicked="Registration" Background="Transparent" FontSize="13" TextColor="#4D2DB7"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
