@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:FunShopMVVMTwo.ViewModel"
+             x:Class="FunShopMVVMTwo.View.CategoryPage"
+             BindingContext="{DynamicResource viewModel}">
+    <ContentPage.Resources>
+        <vm:CategoryVM x:Key="viewModel"/>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Категории" FontSize="45" FontAttributes="Bold" TextColor="#4D2DB7" Margin="10"/>
+            <StackLayout Orientation="Horizontal" HeightRequest="50" x:Name="EditiButtons">
+                <Button Command="{Binding UpdateCategory}" Text="✎"  CornerRadius="5" BackgroundColor="Transparent" BorderColor="#AED2FF" BorderWidth="2" FontSize="20" />
+                <Button Command="{Binding DeleteCategory}"  Text="🗑"  CornerRadius="5" BackgroundColor="Transparent" BorderColor="#AED2FF" BorderWidth="2"/>
+                <Button Command="{Binding AddCategory}" Text="Добавить категорию"  BackgroundColor="#AED2FF" TextColor="#000"/>
+            </StackLayout>
+            <CollectionView ItemsSource="{Binding CategoriesList}" SelectedItem="{Binding SelectedCategory}" SelectionMode="Single" Margin="10">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Vertical" WidthRequest="200" Margin="10">
+                            <Label Text="{Binding Title}" WidthRequest="200" FontSize="30" FontAttributes="Bold" HeightRequest="50" TextColor="#4D2DB7" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

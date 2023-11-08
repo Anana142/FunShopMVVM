@@ -11,15 +11,14 @@
     <FlyoutItem Title="Товары" Icon="xamarin.png">
         <ShellContent Route="Product" ContentTemplate="{DataTemplate local:ProductPage}"/>
     </FlyoutItem>
-    <!--<MenuItem Clicked="ToRegistration" Text="Выход"/>
-
-    
-    
     <FlyoutItem Title="Категории" Icon="xamarin.png">
         <ShellContent Route="Category"   ContentTemplate="{DataTemplate local:CategoryPage}"/>
     </FlyoutItem>
 
+    <MenuItem Clicked="Back" Text="Выход"/>
+    
     <TabBar>
         <ShellContent Route="Registration" ContentTemplate="{DataTemplate local:RegistrationPage}"/>
-    </TabBar>-->
+    </TabBar>
+
 </Shell>

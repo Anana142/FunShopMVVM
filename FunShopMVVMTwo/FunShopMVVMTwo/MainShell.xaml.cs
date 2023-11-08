@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FunShopMVVMTwo.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,12 @@ namespace FunShopMVVMTwo
         public MainShell()
         {
             InitializeComponent();
+			Routing.RegisterRoute("Edit", typeof(EditProductPage));
+		}
+
+        private async void Back(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//Authorisation");
         }
     }
 }

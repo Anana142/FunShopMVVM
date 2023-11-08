@@ -11,16 +11,15 @@ using Xamarin.Forms.Xaml;
 namespace FunShopMVVMTwo.View
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ProductPage : ContentPage
+	public partial class EditProductPage : ContentPage
 	{
-		public ProductPage ()
+		public EditProductPage()
 		{
-			InitializeComponent ();
+			InitializeComponent();
 		}
-
-        protected override void OnAppearing()
-        {
-            ((ProductVM)BindingContext).OnAppearing();
+		protected override void OnAppearing()
+		{
+			((EditProductVM)BindingContext).OnAppearing();
 		}
-    }
+	}
 }

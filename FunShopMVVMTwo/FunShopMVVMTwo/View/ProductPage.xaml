@@ -1,12 +1,59 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FunShopMVVMTwo.View.ProductPage">
+			 xmlns:vm="clr-namespace:FunShopMVVMTwo.ViewModel"
+             x:Class="FunShopMVVMTwo.View.ProductPage"
+			 BindingContext="{DynamicResource viewModel}">
+
+	<ContentPage.Resources>
+		<vm:ProductVM x:Key="viewModel"/>
+	</ContentPage.Resources>
+	
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+		<StackLayout>
+			<Grid  Margin="10, 0, 0, 0">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="auto"/>
+					<ColumnDefinition />
+					<ColumnDefinition Width="250"/>
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="auto"/>
+					<RowDefinition Height="auto"/>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+
+				<Label Text="Shop" FontSize="55" TextColor="#4D2DB7" FontAttributes="Bold" Grid.ColumnSpan="3"/>
+
+				<StackLayout Orientation="Horizontal" Grid.Row="2"  Grid.Column="0" Margin="10, 0, 0, 0" x:Name="EditiButtons">
+					<Button Command="{Binding EditProduct}" Text="✎" HeightRequest="60" CornerRadius="5" BackgroundColor="Transparent" BorderColor="#AED2FF" BorderWidth="2" FontSize="20" />
+					<Button Command="{Binding DeleteProduct}" Text="🗑"  CornerRadius="5" BackgroundColor="Transparent" BorderColor="#AED2FF" BorderWidth="2"/>
+					<Button Command="{Binding AddProduct}" Text="+" FontSize="15" 
+                    BackgroundColor="Transparent" BorderColor="#AED2FF" BorderWidth="2"  FontAttributes="Bold" CornerRadius="5" TextColor="#000"/>
+				</StackLayout>
+
+			</Grid>
+
+			<Grid Margin="0, 20, 0, 0">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
+
+				<CollectionView ItemsSource="{Binding ProductList}" WidthRequest="200" Grid.Column="0" SelectedItem = "{Binding SelectedProduct}"  SelectionMode="Single" Margin="5">
+					<CollectionView.ItemTemplate>
+						<DataTemplate>
+							<StackLayout Orientation="Vertical" WidthRequest="200" Margin="10" >
+								<Image Source="{Binding PathImage}" HeightRequest="120" WidthRequest="100"/>
+								<Label Text="{Binding Title}" WidthRequest="200" FontSize="30" FontAttributes="Bold" TextColor="#4D2DB7"/>
+								<Label Text="{Binding Category.Title}" WidthRequest="200" FontSize="20" TextColor="#4D2DB7" />
+								<Label Text="{Binding Description}" WidthRequest="200" TextColor="#4D2DB7"/>
+								<Label Text="{Binding Price}" FontAttributes="Bold" TextColor="#4D2DB7"/>
+							</StackLayout>
+						</DataTemplate>
+					</CollectionView.ItemTemplate>
+				</CollectionView>
+			</Grid>
+		</StackLayout>
+	</ContentPage.Content>
 </ContentPage>

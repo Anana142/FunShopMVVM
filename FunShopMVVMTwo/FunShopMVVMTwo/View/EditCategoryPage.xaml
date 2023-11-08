@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:FunShopMVVMTwo.ViewModel"
+             x:Class="FunShopMVVMTwo.View.EditCategoryPage"
+             BindingContext="{DynamicResource viewModel}">
+
+    <ContentPage.Resources>
+        <vm:EditCategoryVM x:Key="viewModel"/>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Text="{Binding CategoryItem.Title}" Margin="10, 50, 10, 10"/>
+            <StackLayout>
+                <Button Text="Сохранить" Command="{Binding Save}" Margin="10"  BackgroundColor="#AED2FF"/>
+                <Button Text="Назад" Command="{Binding Back}"  Margin="10" BackgroundColor="Transparent" BorderColor="#AED2FF" BorderWidth="2"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

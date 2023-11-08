@@ -9,7 +9,7 @@ namespace FunShopMVVMTwo.Tools
     public class BaseVM : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        void Signal([CallerMemberName] string prop = null) 
+        public void Signal([CallerMemberName] string prop = null) 
             => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));   
     }
 }
