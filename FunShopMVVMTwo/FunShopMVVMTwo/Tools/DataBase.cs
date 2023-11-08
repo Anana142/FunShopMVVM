@@ -9,7 +9,6 @@ namespace FunShopMVVMTwo.Tools
     {
         private const string FileName = "MVVMDataBase.db";
         private static DboContext instance;
-
         public static DboContext Instance
         {
             get

@@ -27,8 +27,8 @@
             <StackLayout Grid.Row="2" Grid.Column="1">
                 <Entry Placeholder="Логин" WidthRequest="120" Text="{Binding Login}" />
                 <Entry Placeholder="Пароль" WidthRequest="120" Text="{Binding Password}" IsPassword="true"/>
-                <Button Text="Войти" Clicked="Inter" CornerRadius="5" BackgroundColor="#AED2FF"/>
-                <Button Text="Регистрация" Clicked="Registration" Background="Transparent" FontSize="13" TextColor="#4D2DB7"/>
+                <Button Text="Войти" Command="{Binding Enter}" CornerRadius="5" BackgroundColor="#AED2FF"/>
+                <!--<Button Text="Регистрация" Clicked="Registration" Background="Transparent" FontSize="13" TextColor="#4D2DB7"/>-->
             </StackLayout>
         </Grid>
     </ContentPage.Content>

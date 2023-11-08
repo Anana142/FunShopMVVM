@@ -4,14 +4,17 @@
              xmlns:local="clr-namespace:FunShopMVVMTwo.View"
              x:Class="FunShopMVVMTwo.MainShell">
 
-    <!--<MenuItem Clicked="ToRegistration" Text="Выход"/>
-
     <TabBar>
         <ShellContent Route="Authorisation" ContentTemplate="{DataTemplate local:AuthorisationPage}"/>
     </TabBar>
+    
     <FlyoutItem Title="Товары" Icon="xamarin.png">
         <ShellContent Route="Product" ContentTemplate="{DataTemplate local:ProductPage}"/>
     </FlyoutItem>
+    <!--<MenuItem Clicked="ToRegistration" Text="Выход"/>
+
+    
+    
     <FlyoutItem Title="Категории" Icon="xamarin.png">
         <ShellContent Route="Category"   ContentTemplate="{DataTemplate local:CategoryPage}"/>
     </FlyoutItem>

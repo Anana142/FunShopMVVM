@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FunShopMVVMTwo.Model;
+using FunShopMVVMTwo.Tools;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +17,7 @@ namespace FunShopMVVMTwo.View
         public AuthorisationPage()
         {
             InitializeComponent();
+
         }
     }
 }
